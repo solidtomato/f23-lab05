@@ -10,9 +10,19 @@ import { SortedIntList } from './hidden/SortedIntListLibrary.js'
  *
  */
 
-class InheritanceSortedIntList {
+class InheritanceSortedIntList extends SortedIntList {
   // Write your implementation below with API documentation
 
+  private addCount = 0
+
+  add = (num: number): boolean => {
+    this.addCount += 1
+    return super.add(num)
+  }
+
+  getTotalAdded = (): number => {
+    return this.addCount
+  }
 }
 
 export { InheritanceSortedIntList }
